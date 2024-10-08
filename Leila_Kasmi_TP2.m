@@ -6,7 +6,7 @@ img = imread('kids.tif');
 im_noise = imnoise(img, 'speckle', 0.1);
 %im_noise = imnoise(img, 'gaussian', 0, 0.01);
 
-%*********************** Filtres linéaires ***********************
+%*********************** Filtres linÃ©aires ***********************
 
 %%%%%%%%%%%%%%%%% Filtre Moyennage %%%%%%%%%%%%%%%%%
 
@@ -24,9 +24,9 @@ subplot(121), imshow(im_noise), title('Image originale');
 subplot(122), imshow(im_gaus), title('Filtre gaussien');
 %}
 
-%*********************** Filtres non linéaires %***********************
+%*********************** Filtres non linÃ©aires %***********************
 
-%%%%%%%%%%%%%%%%% Filtre Median et Max et Min %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Filtre Median  et Max et Min %%%%%%%%%%%%%%%%%
 %{
 kernel_size = 3;
 img_median = medfilt2(im_noise, [kernel_size kernel_size]);
@@ -34,12 +34,12 @@ img_min = ordfilt2(im_noise, 1, ones(kernel_size), 'symmetric');
 img_max = ordfilt2(im_noise, kernel_size^2, ones(kernel_size), 'symmetric');
 
 subplot(2,2,1), imshow(im_noise), title('Image originale')
-subplot(2,2,2), imshow(img_median), title('Filtre médian')
+subplot(2,2,2), imshow(img_median), title('Filtre mÃ©dian')
 subplot(2,2,3), imshow(img_min), title('Filtre min')
 subplot(2,2,4), imshow(img_max), title('Filtre max')
 %}
 
-%*********************** Détecteurs de contours du premier ordre ***********************
+%*********************** DÃ©tecteurs de contours du premier ordre ***********************
 
 %%%%%%%%%%%%%%%%% Filtre de Robert %%%%%%%%%%%%%%%%%
 %{
@@ -84,7 +84,7 @@ subplot(2,2,3); imshow(uint8(Ry));title('Contour Vertical');
 subplot(2,2,4); imshow(uint8(R));title('Module du Contour');
 %}
 
-%*********************** Détecteurs de contours du second ordre ***********************
+%*********************** DÃ©tecteurs de contours du second ordre ***********************
 
 %%%%%%%%%%%%%%%%% Filtre de Laplace %%%%%%%%%%%%%%%%%
 
